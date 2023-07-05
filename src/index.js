@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import App1 from "./App1";
 import App2 from "./App2";
+import Login from "./components/Login";
+import Appall from "./Appall";
 import "./index.css";
 import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Layout from "./Layout";
@@ -18,6 +20,7 @@ export default function Apps() {
           <Route index element={<App />} />
           <Route path="/nisha" element={<App1 />} />
           <Route path="/namratha" element={<App2 />} />
+          <Route path="/all" element={<Appall />} />
         </Route>
       </Routes>
     </BrowserRouter>
