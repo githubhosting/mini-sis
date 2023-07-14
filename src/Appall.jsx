@@ -297,6 +297,7 @@ function Appall() {
   const [data, setData] = useState(null);
   const [usn, setUsn] = useState(null);
   const [dob, setDob] = useState(null);
+  const [usnb, setUsnb] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -338,12 +339,14 @@ function Appall() {
             id="usn"
             value={usn}
             onChange={(e) => {
+              const selectedUsnb = e.target.value;
               const selectedDob = e.target.value; // Get the selected DOB value
               const selectedUsn = all_usns_with_dob.find(
                 (option) => option.dob === selectedDob
               ).usn; // Find the corresponding USN value
               setUsn(selectedUsn); // Set the USN state
               setDob(selectedDob); // Set the DOB state
+              setUsnb(selectedUsnb); // Set the USN state
             }}
           >
             {all_usns_with_dob.map((option) => (
@@ -355,7 +358,7 @@ function Appall() {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-4"
         >
           Submit
         </button>

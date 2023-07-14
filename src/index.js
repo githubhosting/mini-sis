@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Layout from "./Layout";
 import Dashboard from "./components/Dashboard";
 import Preferences from "./components/Preferences";
+import Test from "./Test";
 
 export default function Apps() {
   return (
@@ -21,6 +22,7 @@ export default function Apps() {
           <Route path="/nisha" element={<App1 />} />
           <Route path="/namratha" element={<App2 />} />
           <Route path="/all" element={<Appall />} />
+          <Route path="/test" element={<Test />} />
         </Route>
       </Routes>
     </BrowserRouter>
