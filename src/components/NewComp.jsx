@@ -28,7 +28,7 @@ function NewComp(props) {
           <img
             className="h-32 w-full object-cover lg:h-48"
             src={props.profile.backgroundImage}
-            alt=""
+            alt="Background"
           />
         </div>
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -37,7 +37,7 @@ function NewComp(props) {
               <img
                 className="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
                 src={props.profile.avatar}
-                alt=""
+                alt="Avatar"
               />
             </div>
             <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
@@ -86,26 +86,26 @@ function NewComp(props) {
                       </th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-gray-100">
                     <tr>
-                      <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                         Test
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
                         {item.t1.slice(0, 2)}
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
                         {item.t2.slice(0, 2)}
                       </td>
                     </tr>
                     <tr>
-                      <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                         Assignment
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
                         {item.a1.slice(0, 2)}
                       </td>
-                      <td class="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
                         {item.a2.slice(0, 2)}
                       </td>
                     </tr>
@@ -127,7 +127,7 @@ function NewComp(props) {
                     {props.data.attendance[index].percentage}
                   </h1>
                 </div>
-                <h1 className="text-center">
+                <h1 className="text-center text-sm">
                   {latestDate ? `Updated on ${latestDate}` : ""}
                 </h1>
               </div>

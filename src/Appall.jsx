@@ -366,10 +366,10 @@ function Appall() {
 
       {loading && (
         <div className="flex justify-center items-center min-h-screen bg-[#f2f3f9]">
-          <div class="loader">
-            <div class="inner one"></div>
-            <div class="inner two"></div>
-            <div class="inner three"></div>
+          <div className="loader">
+            <div className="inner one"></div>
+            <div className="inner two"></div>
+            <div className="inner three"></div>
           </div>
         </div>
       )}
@@ -425,26 +425,26 @@ function Appall() {
                           </th>
                         </tr>
                       </thead>
-                      <tbody class="divide-y divide-gray-100">
+                      <tbody className="divide-y divide-gray-100">
                         <tr>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                          <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                             Test
                           </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
+                          <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
                             {item.t1}
                           </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
+                          <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
                             {item.t2}
                           </td>
                         </tr>
                         <tr>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700">
+                          <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                             Assignment
                           </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
+                          <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
                             {item.a1}
                           </td>
-                          <td class="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
+                          <td className="whitespace-nowrap px-4 py-2 text-gray-700 text-center">
                             {item.a2}
                           </td>
                         </tr>

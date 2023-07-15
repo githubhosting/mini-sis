@@ -4,8 +4,6 @@ import React, { useEffect, useState } from "react";
 import data from "./data.json";
 import NewComp from "./components/NewComp";
 import Loading from "./components/Loading";
-import WelcomePage from "./components/PageData";
-import LoginPage from "./components/Login";
 import { CookiesProvider, useCookies } from "react-cookie";
 
 const profile = {
@@ -16,25 +14,26 @@ const profile = {
 };
 
 function Test() {
-  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
-  function handleLogin(user, dob) {
-    setCookie("user", user, "dob", dob, { path: "/" });
-  }
-  const handleLogout = () => {
-    removeCookie("user");
-  };
+  // const urll =
+  //   "https://upylba53h2.execute-api.us-east-1.amazonaws.com/sis?usn=1ms21ci049&dob=2003-05-21";
+  // const [data, setData] = useState(null);
 
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(urll);
+  //     const json = await response.json();
+  //     setData(json);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
   return (
-    <main className="">
-      <CookiesProvider>
-        <div>
-          {cookies.user ? (
-            <WelcomePage user={cookies.user} onLogout={handleLogout} />
-          ) : (
-            <LoginPage onLogin={handleLogin} />
-          )}
-        </div>
-      </CookiesProvider>
+    <main className="container">
+      {data ? <NewComp data={data} profile={profile} /> : <Loading />}
     </main>
   );
 }
