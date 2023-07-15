@@ -13,6 +13,7 @@ function PageData({ user, onLogout }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [check, setCheck] = useState(false);
+  const [realdata, setRealData] = useState(null);
   console.log(user.username, user.dob);
 
   useEffect(() => {
@@ -33,9 +34,11 @@ function PageData({ user, onLogout }) {
       try {
         const response = await fetch(urll);
         const json = await response.json();
-        console.log(json.length > 0);
-        if (json.length > 0) {
+        if (json.length !== 0) {
           setData(json);
+          if (json.name !== "") {
+            setRealData(json.name);
+          }
         } else {
           setError("Invalid Credentials");
         }
@@ -52,6 +55,7 @@ function PageData({ user, onLogout }) {
       <div className="container">
         <h1 className="text-center font-bold">USN: {user.username}</h1>
         <h2 className="text-center">DOB: {user.dob}</h2>
+        {realdata ? <NewComp data={data} profile={profile} /> : <Loading />}
         <div className="flex p-4 justify-center">
           <button
             className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
@@ -60,7 +64,6 @@ function PageData({ user, onLogout }) {
             Clear cookies
           </button>
         </div>
-        {data ? <NewComp data={data} profile={profile} /> : <Loading />}
       </div>
     );
   } else {
