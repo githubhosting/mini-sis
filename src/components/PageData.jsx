@@ -52,18 +52,23 @@ function PageData({ user, onLogout }) {
 
   if (check === true) {
     return (
-      <div className="container">
-        <h1 className="text-center font-bold">USN: {user.username}</h1>
-        <h2 className="text-center">DOB: {user.dob}</h2>
-        {realdata ? <NewComp data={data} profile={profile} /> : <Loading />}
+      <div className="container bg-blue-50">
+        <h1 className="text-center font-bold">Students Information System</h1>
+        <div className="bg-blue-100 rounded p-3">
+          <h1 className="text-center font-bold">
+            USN: {user.username.toUpperCase()}
+          </h1>
+          <h2 className="text-center">DOB: {user.dob}</h2>
+        </div>
         <div className="flex p-4 justify-center">
           <button
-            className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
             onClick={onLogout}
           >
             Clear cookies
           </button>
         </div>
+        {realdata ? <NewComp data={data} profile={profile} /> : <Loading />}
       </div>
     );
   } else {
