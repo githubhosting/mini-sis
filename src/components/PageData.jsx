@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
 import NewComp from "./NewComp";
@@ -49,10 +50,11 @@ function PageData({ user, onLogout }) {
     };
     fetchData();
   }, [urll]);
+  console.log(realdata);
 
   if (check === true) {
     return (
-      <div className="container bg-blue-50">
+      <div className="w-full bg-blue-50 xl:flex">
         <h1 className="text-center font-bold">Students Information System</h1>
         <div className="bg-blue-100 rounded p-3">
           <h1 className="text-center font-bold">
@@ -68,15 +70,19 @@ function PageData({ user, onLogout }) {
             Clear cookies
           </button>
         </div>
-        {realdata ? <NewComp data={data} profile={profile} /> : <Loading />}
+        {realdata ? (
+          <NewComp data={data} profile={profile} />
+        ) : (
+          <Loading err={realdata} />
+        )}
       </div>
     );
-  } else {
+  } else if (realdata === null || realdata === undefined) {
     return (
       <div className="container">
         <div className="flex p-4 justify-center items-center flex-col">
           <h1 className="text-center font-bold">
-            you might have entered wrong details logout and try again!
+            You might have entered wrong details logout and try again!
           </h1>
           <h1 className="text-center font-bold">USN: {user.username}</h1>
           <h2 className="text-center">DOB: {user.dob}</h2>

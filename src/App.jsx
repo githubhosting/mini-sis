@@ -32,7 +32,7 @@ function App() {
   // }
 
   return (
-    <main className="container">
+    <main className="">
       <CookiesProvider>
         <div>
           {cookies.user ? (

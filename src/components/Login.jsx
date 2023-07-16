@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "../App.css";
 
@@ -9,39 +10,79 @@ function Login({ onLogin }) {
     event.preventDefault();
     onLogin({ username, dob });
   }
-  console.log(username, dob);
   return (
-    <div className="container bg-blue-50 min-h-screen">
-      <h1 className="text-center font-semibold pt-5">
-        Please Login to view your details
-      </h1>
-      <form
-        onSubmit={handleSubmit}
-        className="justify-center flex flex-col items-center py-10 align-middle"
-      >
-        <h1 className="font-semibold ">USN:</h1>
-        <input
-          type="text"
-          className="mt-2 p-1 rounded-md text-center bg-blue-100"
-          placeholder="USN"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
-        <h1 className="font-semibold ">DOB:</h1>
-        <input
-          className="p-2 rounded-md text-center justify-center mt-2 text-black bg-blue-100"
-          type="date"
-          value={dob}
-          onChange={(e) => setDob(e.target.value)}
-        />
-        <br />
-        <input
-          className="bg-green-700 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-5"
-          type="submit"
-          value="Submit"
-        />
-      </form>
+    <div className="bg-blue-50 min-h-screen h-full">
+      <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <img
+            className="mx-auto h-16 w-auto bg-white rounded-md"
+            src="https://user-images.githubusercontent.com/71520844/185781029-0afe7079-1d90-4cbc-9c8f-ce424c73a916.png"
+            alt="Your Company"
+          />
+          <h2 className="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900 px-2">
+            Login to view your SIS data
+          </h2>
+          <div className="mt-2 text-center text-sm text-gray-600">
+            <p className="font-medium text-blue-600">
+              make sure to enter the correct information
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 mx-auto w-full max-w-md px-4">
+          <div className="bg-white py-8 px-4 shadow rounded-lg sm:px-10">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  USN:
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="usn"
+                    name="usn"
+                    type="text"
+                    required
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  DOB:
+                </label>
+                <div className="mt-1">
+                  <input
+                    id="password"
+                    name="password"
+                    type="date"
+                    autoComplete="current-password"
+                    required
+                    onChange={(e) => setDob(e.target.value)}
+                    className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
