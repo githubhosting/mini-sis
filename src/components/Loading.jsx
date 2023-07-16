@@ -1,22 +1,18 @@
 import "../App.css";
-function Loading(props) {
+function Loading() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-blue-50 w-full">
-      {props.realdata === undefined ? (
-        <h1 className="text-2xl font-semibold text-gray-800">
-          You might have entered wrong details logout and try again!
-        </h1>
-      ) : (
-        <h1 className="text-2xl font-semibold text-gray-800">
-          {props.realdata}
-        </h1>
-      )}
-      <br />
-      <div className="loader">
-        <div className="inner one"></div>
-        <div className="inner two"></div>
-        <div className="inner three"></div>
-      </div>
+    <div className="flex justify-center items-center min-h-screen bg-slate-900 w-full">
+      <ul class="loader">
+        <li class="center"></li>
+        <li class="item item-1"></li>
+        <li class="item item-2"></li>
+        <li class="item item-3"></li>
+        <li class="item item-4"></li>
+        <li class="item item-5"></li>
+        <li class="item item-6"></li>
+        <li class="item item-7"></li>
+        <li class="item item-8"></li>
+      </ul>
     </div>
   );
 }

@@ -13,6 +13,7 @@ const profile = {
 function PageData({ user, onLogout }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [check, setCheck] = useState(false);
   const [realdata, setRealData] = useState(null);
   console.log(user.username, user.dob);
@@ -33,6 +34,7 @@ function PageData({ user, onLogout }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const response = await fetch(urll);
         const json = await response.json();
         if (json.length !== 0) {
@@ -46,53 +48,83 @@ function PageData({ user, onLogout }) {
       } catch (error) {
         console.error("Error fetching data:", error);
         setError("Invalid Credentials");
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
   }, [urll]);
   console.log(realdata);
+  function formatDate(inputDate) {
+    const dateParts = inputDate.split("-");
+    const year = dateParts[0];
+    const month = dateParts[1];
+    const day = dateParts[2];
+
+    // Create a JavaScript Date object to get the month name
+    const dateObj = new Date(inputDate);
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const monthName = monthNames[dateObj.getMonth()];
+
+    return `${day} ${monthName}, ${year}`;
+  }
 
   if (check === true) {
     return (
-      <div className="w-full bg-blue-50 xl:flex">
-        <h1 className="text-center font-bold">Students Information System</h1>
-        <div className="bg-blue-100 rounded p-3">
-          <h1 className="text-center font-bold">
-            USN: {user.username.toUpperCase()}
+      <div className="w-full bg-gray-900 text-indigo-50">
+        <div className="">
+          <h1 className="text-center font-bold pt-8 text-2xl lg:text-4xl">
+            Students Information System
           </h1>
-          <h2 className="text-center">DOB: {user.dob}</h2>
+          <div className="p-4">
+            <h1 className="text-center font-bold">
+              USN: {user.username.toUpperCase()}
+            </h1>
+            <h2 className="text-center">DOB: {formatDate(user.dob)}</h2>
+          </div>
         </div>
-        <div className="flex p-4 justify-center">
-          <button
-            className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
-            onClick={onLogout}
-          >
-            Clear cookies
-          </button>
-        </div>
-        {realdata ? (
-          <NewComp data={data} profile={profile} />
+        {loading ? (
+          <Loading />
+        ) : realdata ? (
+          <div>
+            <NewComp data={data} profile={profile} />
+            <div className="p-4 flex justify-center w-full">
+              <button
+                className="w-full md:w-auto lg:px-10 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded"
+                onClick={onLogout}
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         ) : (
-          <Loading err={realdata} />
+          <div className="bg-gray-900 min-h-screen">
+            <div className="flex p-4 justify-center items-center flex-col">
+              <h1 className="text-center font-bold mb-8">
+                You might have entered wrong details logout and try again!
+              </h1>
+              <button
+                className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                onClick={onLogout}
+              >
+                Refresh
+              </button>
+            </div>
+          </div>
         )}
-      </div>
-    );
-  } else if (realdata === null || realdata === undefined) {
-    return (
-      <div className="container">
-        <div className="flex p-4 justify-center items-center flex-col">
-          <h1 className="text-center font-bold">
-            You might have entered wrong details logout and try again!
-          </h1>
-          <h1 className="text-center font-bold">USN: {user.username}</h1>
-          <h2 className="text-center">DOB: {user.dob}</h2>
-          <button
-            className="bg-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-            onClick={onLogout}
-          >
-            Logout
-          </button>
-        </div>
       </div>
     );
   }

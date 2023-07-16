@@ -22,41 +22,41 @@ function NewComp(props) {
   };
 
   return (
-    <div className="bg-[#fefefe]">
+    <div className="bg-gray-900">
       <div>
-        <div>
+        {/* <div>
           <img
             className="h-32 w-full object-cover lg:h-48"
             src={props.profile.backgroundImage}
             alt="Background"
           />
-        </div>
+        </div> */}
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
-            <div className="flex">
+          <div className="-mt-6 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+            {/* <div className="flex">
               <img
-                className="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
+                className="h-24 w-24 rounded-full ring-2 ring-indigo-50 shadow-num_d sm:h-32 sm:w-32"
                 src={props.profile.avatar}
                 alt="Avatar"
               />
-            </div>
+            </div> */}
             <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
               <div className="mt-6 min-w-0 flex-1 sm:hidden md:block">
-                <h1 className="truncate text-2xl font-bold text-gray-900">
-                  {props.data.name}
+                <h1 className="truncate lg:text-2xl font-bold text-white text-xl text-center">
+                  Welcome {props.data.name} !
                 </h1>
               </div>
             </div>
           </div>
           <div className="mt-6 hidden min-w-0 flex-1 sm:block md:hidden">
-            <h1 className="truncate text-2xl font-bold text-gray-900">
-              {props.data.name}
+            <h1 className="truncate text-2xl font-bold text-white">
+              Welcome {props.data.name} !
             </h1>
           </div>
         </div>
       </div>
       <div className="border-t border-gray-200 mt-6"></div>
-      <div className="grid gap-3 px-4 my-10 lg:grid-cols-2 items-center justify-center lg:mx-20 xl:grid-cols-3">
+      <div className="grid gap-3 px-4 py-10 lg:grid-cols-2 items-center justify-center lg:mx-20 xl:grid-cols-3">
         {props.data.marks.map((item, index) => {
           if (item.name) {
             const presentDates = props.data.attendance[index].present_dates;
@@ -70,52 +70,65 @@ function NewComp(props) {
               parseInt(days_absent) +
               parseInt(remaining_days);
             return (
-              <div key={index} className="p-5 bg-blue-100 rounded-xl shadow-md">
-                <h1 className="text-center font-semibold">{item.name}</h1>
-                <table className="min-w-full divide-y-2 divide-gray-200 bg-blue-50 rounded-lg text-sm mt-2">
+              <div
+                key={index}
+                className="p-5 bg-[#0b1120] rounded-xl shadow-num_d0"
+              >
+                <h1 className="text-center font-semibold text-white">
+                  {item.name}
+                </h1>
+                <table className="min-w-full divide-y divide-gray-600 bg-slate-800 rounded-lg text-sm mt-2">
                   <thead className="ltr:text-left rtl:text-right">
                     <tr>
-                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-indigo-50 text-left">
                         Marks
                       </th>
-                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        1
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-indigo-50">
+                        CIE 1
                       </th>
-                      <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                        2
+                      <th className="whitespace-nowrap px-4 py-2 font-medium text-indigo-50">
+                        CIE 2
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-gray-600">
                     <tr>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                      <td className="whitespace-nowrap px-4 py-2 text-indigo-50">
                         Test
                       </td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
-                        {item.t1.slice(0, 2)}
+                      <td className="whitespace-nowrap px-4 py-2 text-indigo-50 text-center font-semibold">
+                        {item.t1 === "-"
+                          ? "-"
+                          : item.t1.slice(0, item.t1.indexOf("/"))}
                       </td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
-                        {item.t2.slice(0, 2)}
+                      <td className="whitespace-nowrap px-4 py-2 text-indigo-50 text-center font-semibold">
+                        {item.t2 === "-"
+                          ? "-"
+                          : item.t2.slice(0, item.t2.indexOf("/"))}
                       </td>
                     </tr>
                     <tr>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                      <td className="whitespace-nowrap px-4 py-2 text-indigo-50">
                         Assignment
                       </td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
-                        {item.a1.slice(0, 2)}
+                      <td className="whitespace-nowrap px-4 py-2 text-indigo-50 text-center font-semibold">
+                        {item.a1 === "-"
+                          ? "-"
+                          : item.a1.slice(0, item.a1.indexOf("/"))}
                       </td>
-                      <td className="whitespace-nowrap px-4 py-2 text-gray-800 text-center font-semibold">
-                        {item.a2.slice(0, 2)}
+                      <td className="whitespace-nowrap px-4 py-2 text-indigo-50 text-center font-semibold">
+                        {item.a2 === "-"
+                          ? "-"
+                          : item.a2.slice(0, item.a2.indexOf("/"))}
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <div className="flex justify-center mt-2">
+                <div className="flex justify-center mt-2 text-indigo-50">
                   <h1 className="">Final CIE: </h1>
                   <h1 className="ml-2 font-semibold">{item["final cie"]}</h1>
                 </div>
-                <div className="flex justify-center mt-2">
+                <div className="flex justify-center mt-2 text-indigo-50">
                   <h1 className="">Attendance: </h1>
                   <h1
                     className={`ml-2 font-semibold ${
@@ -127,7 +140,7 @@ function NewComp(props) {
                     {props.data.attendance[index].percentage}
                   </h1>
                 </div>
-                <h1 className="text-center text-sm">
+                <h1 className="text-center text-sm text-indigo-50">
                   {latestDate ? `Updated on ${latestDate}` : ""}
                 </h1>
               </div>

@@ -327,7 +327,7 @@ function Appall() {
   };
 
   return (
-    <main className="container">
+    <main className="bg-gray-900">
       <h1 className="text-center my-4">Student Information System</h1>
       <form
         onSubmit={handleSubmit}

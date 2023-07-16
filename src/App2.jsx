@@ -31,7 +31,7 @@ function App1() {
   };
   console.log(data);
   return (
-    <main className="container">
+    <main className="bg-gray-900">
       {data ? <NewComp data={data} profile={profile} /> : <Loading />}
     </main>
   );

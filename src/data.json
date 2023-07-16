@@ -16,7 +16,7 @@
             "present": "21",
             "absent": "6",
             "remaining": "21",
-            "percentage": "77%",
+            "percentage": "99%",
             "present_dates": [
                 {
                     "date": "28-06-2023",
@@ -191,7 +191,7 @@
             "present": "5",
             "absent": "1",
             "remaining": "5",
-            "percentage": "83%",
+            "percentage": "100%",
             "present_dates": [
                 {
                     "date": "26-06-2023",
@@ -241,7 +241,7 @@
             "present": "19",
             "absent": "4",
             "remaining": "16",
-            "percentage": "82%",
+            "percentage": "100%",
             "present_dates": [
                 {
                     "date": "30-06-2023",
@@ -392,7 +392,7 @@
             "present": "14",
             "absent": "5",
             "remaining": "15",
-            "percentage": "73%",
+            "percentage": "100%",
             "present_dates": [
                 {
                     "date": "28-06-2023",
@@ -519,7 +519,7 @@
             "present": "17",
             "absent": "4",
             "remaining": "16",
-            "percentage": "80%",
+            "percentage": "100%",
             "present_dates": [
                 {
                     "date": "28-06-2023",
@@ -658,7 +658,7 @@
             "present": "17",
             "absent": "2",
             "remaining": "16",
-            "percentage": "89%",
+            "percentage": "99%",
             "present_dates": [
                 {
                     "date": "26-06-2023",
@@ -785,7 +785,7 @@
             "present": "6",
             "absent": "1",
             "remaining": "5",
-            "percentage": "85%",
+            "percentage": "99%",
             "present_dates": [
                 {
                     "date": "22-06-2023",
@@ -882,7 +882,7 @@
             "present": "6",
             "absent": "2",
             "remaining": "4",
-            "percentage": "75%",
+            "percentage": "99%",
             "present_dates": [
                 {
                     "date": "03-07-2023",
@@ -943,7 +943,7 @@
             "present": "0",
             "absent": "0",
             "remaining": "13",
-            "percentage": "0%",
+            "percentage": "-100%",
             "present_dates": [],
             "absent_dates": []
         }
@@ -952,7 +952,7 @@
         {
             "name": "Numerical Techniques and Probability Models (CI41)",
             "class_average": {
-                "t1": "19",
+                "t1": "9",
                 "t2": "0",
                 "t3": "0",
                 "t4": "0",
@@ -972,7 +972,7 @@
         {
             "name": "Constitution of India & Professional Ethics (HS492)",
             "class_average": {
-                "t1": "26",
+                "t1": "6",
                 "t2": "0",
                 "t3": "0",
                 "t4": "0",

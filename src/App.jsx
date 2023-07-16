@@ -7,6 +7,7 @@ import Loading from "./components/Loading";
 import PageData from "./components/PageData";
 import LoginPage from "./components/Login";
 import { CookiesProvider, useCookies } from "react-cookie";
+import Footer from "./components/Footer";
 
 const profile = {
   avatar:
@@ -23,16 +24,9 @@ function App() {
   const handleLogout = () => {
     removeCookie("user");
   };
-  // function check() {
-  //   if (cookies.user.username == null || cookies.user.dob == null) {
-  //     return false;
-  //   } else {
-  //     return true;
-  //   }
-  // }
 
   return (
-    <main className="">
+    <main className="bg-gray-900">
       <CookiesProvider>
         <div>
           {cookies.user ? (
@@ -44,6 +38,7 @@ function App() {
           )}
         </div>
       </CookiesProvider>
+      <Footer />
     </main>
   );
 }
