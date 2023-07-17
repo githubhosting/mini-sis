@@ -8,6 +8,7 @@ import PageData from "./components/PageData";
 import LoginPage from "./components/Login";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
+import FooterLogin from "./components/Footerlogin";
 
 const profile = {
   avatar:
@@ -32,13 +33,16 @@ function App() {
           {cookies.user ? (
             <>
               <PageData user={cookies.user} onLogout={handleLogout} />
+              <Footer />
             </>
           ) : (
-            <LoginPage onLogin={handleLogin} />
+            <div className="min-h-screen bg-blue-50">
+              <LoginPage onLogin={handleLogin} />
+              <FooterLogin />
+            </div>
           )}
         </div>
       </CookiesProvider>
-      <Footer />
     </main>
   );
 }

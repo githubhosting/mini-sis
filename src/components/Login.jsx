@@ -11,8 +11,8 @@ function Login({ onLogin }) {
     onLogin({ username, dob });
   }
   return (
-    <div className="bg-blue-50 min-h-screen h-full">
-      <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="bg-blue-50">
+      <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
             className="mx-auto h-16 w-auto bg-white rounded-md"
@@ -23,8 +23,8 @@ function Login({ onLogin }) {
             Login to view your SIS data
           </h2>
           <div className="mt-2 text-center text-sm text-gray-600">
-            <p className="font-medium text-blue-600">
-              make sure to enter the correct information
+            <p className="font-medium text-blue-600 italic">
+              make sure to enter the correct credintials
             </p>
           </div>
         </div>

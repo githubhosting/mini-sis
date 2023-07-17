@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import "./App.css";
+import Anthropic from '@anthropic-ai/sdk';
 import React, { useEffect, useState } from "react";
 import data from "./data.json";
 import NewComp from "./components/NewComp";
 import Loading from "./components/Loading";
 import { CookiesProvider, useCookies } from "react-cookie";
+import Footer from "./components/Footer";
+
 // const data = false;
 
 const profile = {
@@ -106,6 +109,7 @@ function Test({ onLogout }) {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
