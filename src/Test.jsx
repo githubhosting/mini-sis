@@ -7,6 +7,7 @@ import NewComp from "./components/NewComp";
 import Loading from "./components/Loading";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
+import AnthropicSDKComponent from "./components/AnthropicSDKComponent";
 
 // const data = false;
 

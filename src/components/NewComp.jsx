@@ -17,8 +17,16 @@ function NewComp(props) {
     } else if (latestAbsentDate) {
       latestDate = latestAbsentDate;
     }
-
     return latestDate;
+  };
+
+  const calculateDaysAgo = (date) => {
+    const currentDate = new Date();
+    const dateParts = date.split("-");
+    const targetDate = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+    const timeDifference = currentDate - targetDate;
+    const daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    return daysAgo;
   };
 
   return (
@@ -62,6 +70,7 @@ function NewComp(props) {
               parseInt(days_present) +
               parseInt(days_absent) +
               parseInt(remaining_days);
+            const daysAgo = latestDate ? calculateDaysAgo(latestDate) : null;
             return (
               <div
                 key={index}
@@ -134,7 +143,8 @@ function NewComp(props) {
                   </h1>
                 </div>
                 <h1 className="text-center text-sm text-indigo-50">
-                  {latestDate ? `Updated on ${latestDate}` : ""}
+                  {latestDate ? `Updated on ${latestDate}` : ""}:{" "}
+                  {daysAgo ? daysAgo : ""} days ago
                 </h1>
               </div>
             );
