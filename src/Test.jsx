@@ -12,28 +12,57 @@ const anthropic = new Anthropic({
     "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",
 });
 
-const MyComponent = () => {
-  let headers = new Headers();
+const MyComponent = (props) => {
+  const mydata = props.data;
+  const [aiResponse, setAiResponse] = useState(null);
   useEffect(() => {
     const main = async () => {
+      const url = "https://api.anthropic.com/v1/complete";
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/" + url;
+      const filteredData = {
+        name: mydata.name,
+        usn: mydata.usn,
+        marks: mydata.marks,
+      };
+      const stringdata = JSON.stringify(filteredData);
+      console.log(stringdata);
+
       const params = {
-        prompt: `${Anthropic.HUMAN_PROMPT} how does a court case get to the Supreme Court? ${Anthropic.AI_PROMPT}`,
-        max_tokens_to_sample: 300,
+        prompt: `${Anthropic.HUMAN_PROMPT} Here is my information: ${stringdata}. Carefully analyse the data and provide the key points. ${Anthropic.AI_PROMPT}`,
+        max_tokens_to_sample: 500,
         model: "claude-2",
       };
 
       try {
-        const completion = await anthropic.completions.create(params);
-        console.log(completion);
+        const response = await fetch(proxyUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": anthropic.apiKey,
+          },
+          body: JSON.stringify(params),
+        });
+
+        const results = await response.json();
+        setAiResponse(results.completion);
+        console.log(results);
       } catch (error) {
         console.error("Anthropic API call failed:", error);
       }
     };
 
     main();
-  }, []);
+  }, [mydata]);
 
-  return <div></div>;
+  return (
+    <div>
+      <div className="border-t border-gray-200 mt-6"></div>
+      <div className="mt-6">
+        Here is your response from the AI:
+        {aiResponse && <div>{aiResponse}</div>}{" "}
+      </div>
+    </div>
+  );
 };
 function Test({ onLogout }) {
   const loading = false;
@@ -101,7 +130,7 @@ function Test({ onLogout }) {
         <Loading />
       ) : realdata ? (
         <div>
-          <MyComponent />
+          <MyComponent data={data} />
           <NewComp data={data} />
           <div className="p-4 flex justify-center w-full">
             <button
