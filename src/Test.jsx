@@ -1,23 +1,40 @@
 /* eslint-disable no-unused-vars */
 import "./App.css";
-import Anthropic from '@anthropic-ai/sdk';
+import Anthropic from "@anthropic-ai/sdk";
 import React, { useEffect, useState } from "react";
 import data from "./data.json";
 import NewComp from "./components/NewComp";
 import Loading from "./components/Loading";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
-import AnthropicSDKComponent from "./components/AnthropicSDKComponent";
+const anthropic = new Anthropic({
+  apiKey:
+    "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",
+});
 
-// const data = false;
+const MyComponent = () => {
+  let headers = new Headers();
+  useEffect(() => {
+    const main = async () => {
+      const params = {
+        prompt: `${Anthropic.HUMAN_PROMPT} how does a court case get to the Supreme Court? ${Anthropic.AI_PROMPT}`,
+        max_tokens_to_sample: 300,
+        model: "claude-2",
+      };
 
-const profile = {
-  avatar:
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
-  backgroundImage:
-    "https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+      try {
+        const completion = await anthropic.completions.create(params);
+        console.log(completion);
+      } catch (error) {
+        console.error("Anthropic API call failed:", error);
+      }
+    };
+
+    main();
+  }, []);
+
+  return <div></div>;
 };
-
 function Test({ onLogout }) {
   const loading = false;
   const user = {
@@ -48,7 +65,6 @@ function Test({ onLogout }) {
     const month = dateParts[1];
     const day = dateParts[2];
 
-    // Create a JavaScript Date object to get the month name
     const dateObj = new Date(inputDate);
     const monthNames = [
       "January",
@@ -85,7 +101,8 @@ function Test({ onLogout }) {
         <Loading />
       ) : realdata ? (
         <div>
-          <NewComp data={data} profile={profile} />
+          <MyComponent />
+          <NewComp data={data} />
           <div className="p-4 flex justify-center w-full">
             <button
               className="bg-red-600 hover:bg-red-700 text-white font-semibold w-full md:w-auto lg:px-10 mx-3 py-2 px-4 rounded"
