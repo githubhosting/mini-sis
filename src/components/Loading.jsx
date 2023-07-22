@@ -2,7 +2,7 @@ import "../App.css";
 function Loading() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-slate-900 w-full">
-      <ul class="loader">
+      {/* <ul class="loader">
         <li class="center"></li>
         <li class="item item-1"></li>
         <li class="item item-2"></li>
@@ -12,7 +12,12 @@ function Loading() {
         <li class="item item-6"></li>
         <li class="item item-7"></li>
         <li class="item item-8"></li>
-      </ul>
+      </ul> */}
+      <div className="loader1">
+        <div className="inner one"></div>
+        <div className="inner two"></div>
+        <div className="inner three"></div>
+      </div>
     </div>
   );
 }

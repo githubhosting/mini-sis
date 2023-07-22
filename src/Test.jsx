@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import data from "./data.json";
 import NewComp from "./components/NewComp";
 import Loading from "./components/Loading";
+import LoadingText from "./components/Loading1";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
 const anthropic = new Anthropic({
@@ -15,6 +16,10 @@ const anthropic = new Anthropic({
 const MyComponent = (props) => {
   const mydata = props.data;
   const [aiResponse, setAiResponse] = useState(null);
+  const [responseLoading, setResponseLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [rerror, setRerror] = useState(null);
+
   useEffect(() => {
     const main = async () => {
       const url = "https://api.anthropic.com/v1/complete";
@@ -25,15 +30,21 @@ const MyComponent = (props) => {
         marks: mydata.marks,
       };
       const stringdata = JSON.stringify(filteredData);
-      console.log(stringdata);
-
+      const preprompt = "Please find below the essential student data:";
+      const postprompt =
+        "Your meticulous data analysis will be instrumental in extracting and presenting the key points.";
+      const fullprompt = `${preprompt} ${stringdata} ${postprompt}`;
+      // const fullprompt = "This just an test";
       const params = {
-        prompt: `${Anthropic.HUMAN_PROMPT} Here is my information: ${stringdata}. Carefully analyse the data and provide the key points. ${Anthropic.AI_PROMPT}`,
+        prompt: `${Anthropic.HUMAN_PROMPT} ${fullprompt} ${Anthropic.AI_PROMPT}`,
         max_tokens_to_sample: 500,
         model: "claude-2",
       };
 
       try {
+        setResponseLoading(true);
+        setError(null);
+
         const response = await fetch(proxyUrl, {
           method: "POST",
           headers: {
@@ -46,11 +57,15 @@ const MyComponent = (props) => {
         const results = await response.json();
         setAiResponse(results.completion);
         console.log(results);
+        setRerror(results.error.message);
       } catch (error) {
         console.error("Anthropic API call failed:", error);
+        setError("Failed to fetch AI response.");
+        setRerror(null);
+      } finally {
+        setResponseLoading(false);
       }
     };
-
     main();
   }, [mydata]);
 
@@ -58,8 +73,22 @@ const MyComponent = (props) => {
     <div>
       <div className="border-t border-gray-200 mt-6"></div>
       <div className="mt-6">
-        Here is your response from the AI:
-        {aiResponse && <div>{aiResponse}</div>}{" "}
+        <div className="mt-6">
+          {responseLoading ? (
+            <>
+              <h1 className="text-center">
+                Analyzing your data with AI magic. Hold on tight!
+              </h1>
+              <LoadingText />
+            </>
+          ) : (
+            <div className="px-4">
+              {rerror && <div className="px-4 break-words">{rerror}</div>}
+              Here is analysis by AI:
+              {aiResponse && <div className="break-words">{aiResponse}</div>}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
