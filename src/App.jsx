@@ -19,8 +19,10 @@ const profile = {
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + 100);
   function handleLogin(user, dob) {
-    setCookie("user", user, "dob", dob, { path: "/" });
+    setCookie("user", user, "dob", dob, { path: "/", expires: expirationDate });
   }
   const handleLogout = () => {
     removeCookie("user");

@@ -8,12 +8,15 @@ import Loading from "./components/Loading";
 import LoadingText from "./components/Loading1";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
-const anthropic = new Anthropic({
-  apiKey:
-    "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",
+import OpenAI from "openai";
+const apikey = "esecret_hanjm9lbkdr62f7csy3fem5fvys";
+const anyscale = new OpenAI({
+  baseURL: "https://api.endpoints.anyscale.com/v1",
+  apiKey: apikey,
+  dangerouslyAllowBrowser: true,
 });
 
-const MyComponent = (props) => {
+const MyOldComponent = (props) => {
   const mydata = props.data;
   const [aiResponse, setAiResponse] = useState(null);
   const [responseLoading, setResponseLoading] = useState(true);
@@ -49,7 +52,7 @@ const MyComponent = (props) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-api-key": anthropic.apiKey,
+            "x-api-key": "",
           },
           body: JSON.stringify(params),
         });
@@ -93,6 +96,65 @@ const MyComponent = (props) => {
     </div>
   );
 };
+
+const MyComponent = (props) => {
+  const mydata = props.data;
+  const [aiResponse, setAiResponse] = useState(null);
+  const [responseLoading, setResponseLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const chatComplete = async () => {
+    const filteredData = {
+      name: mydata.name,
+      usn: mydata.usn,
+      marks: mydata.marks,
+    };
+    const stringdata = JSON.stringify(filteredData);
+    const preprompt = "Carefully look into the student data provided:";
+    const postprompt =
+      "Your meticulous data analysis will be instrumental in extracting and presenting the key points.";
+    const fullPrompt = `${preprompt} ${stringdata} ${postprompt}`;
+
+    setResponseLoading(true);
+    setError(null);
+
+    try {
+      const completion = await anyscale.chat.completions.create({
+        model: "meta-llama/Llama-2-7b-chat-hf",
+        messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          { role: "user", content: fullPrompt },
+        ],
+        temperature: 0.7,
+      });
+
+      setAiResponse(completion.choices[0].message.content);
+    } catch (err) {
+      console.error("Error during API call:", err);
+      setError(err.message || "Failed to fetch AI response.");
+    } finally {
+      setResponseLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <button
+        className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+        onClick={chatComplete}
+        disabled={responseLoading}
+      >
+        Analyze Data
+      </button>
+      {responseLoading && <LoadingText />}
+      <div className="mt-6">
+        {error && <div className="px-4 break-words">{error}</div>}
+        {aiResponse && <div className="px-4 break-words">{aiResponse}</div>}
+      </div>
+    </div>
+  );
+};
+
 function Test({ onLogout }) {
   const loading = false;
   const user = {
