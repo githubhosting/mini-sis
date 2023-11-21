@@ -162,23 +162,7 @@ function Test({ onLogout }) {
     dob: "2003-05-21",
   };
   const realdata = true;
-  // const urll =
-  //   "https://upylba53h2.execute-api.us-east-1.amazonaws.com/sis?usn=1ms21ci049&dob=2003-05-21";
-  // const [data, setData] = useState(null);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch(urll);
-  //     const json = await response.json();
-  //     setData(json);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // };
   function formatDate(inputDate) {
     const dateParts = inputDate.split("-");
     const year = dateParts[0];

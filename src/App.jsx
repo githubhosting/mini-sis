@@ -10,42 +10,48 @@ import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
 import FooterLogin from "./components/Footerlogin";
 
-const profile = {
-  avatar:
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
-  backgroundImage:
-    "https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-};
-
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userCookie = cookies.user;
+    if (userCookie) {
+      setIsLoggedIn(true);
+    }
+  }, [cookies.user]);
+
   const expirationDate = new Date();
   expirationDate.setDate(expirationDate.getDate() + 100);
+
   function handleLogin(user, dob) {
-    setCookie("user", user, "dob", dob, { path: "/", expires: expirationDate });
+    setCookie("user", user, { path: "/", expires: expirationDate });
+    setCookie("dob", dob, { path: "/", expires: expirationDate });
+    setIsLoggedIn(true);
   }
+
   const handleLogout = () => {
     removeCookie("user");
+    removeCookie("dob");
+    setIsLoggedIn(false);
   };
 
   return (
-    <main className="bg-gray-900">
-      <CookiesProvider>
-        <div>
-          {cookies.user ? (
-            <>
-              <PageData user={cookies.user} onLogout={handleLogout} />
-              <Footer />
-            </>
-          ) : (
-            <div className="min-h-screen bg-blue-50">
-              <LoginPage onLogin={handleLogin} />
-              <FooterLogin />
-            </div>
-          )}
-        </div>
-      </CookiesProvider>
-    </main>
+    <CookiesProvider>
+      <main className="bg-gray-900">
+        {isLoggedIn ? (
+          <>
+            <PageData user={cookies.user} onLogout={handleLogout} />
+            <Footer />
+          </>
+        ) : (
+          <div className="min-h-screen bg-blue-50">
+            <LoginPage onLogin={handleLogin} />
+            <FooterLogin />
+          </div>
+        )}
+      </main>
+    </CookiesProvider>
   );
 }
 

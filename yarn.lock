@@ -6602,10 +6602,10 @@
     "is-docker" "^2.1.1"
     "is-wsl" "^2.2.0"
 
-"openai@^4.19.0":
-  "integrity" "sha512-cJbl0noZyAaXVKBTMMq6X5BAvP1pm2rWYDBnZes99NL+Zh5/4NmlAwyuhTZEru5SqGGZIoiYKeMPXy4bm9DI0w=="
-  "resolved" "https://registry.npmjs.org/openai/-/openai-4.19.0.tgz"
-  "version" "4.19.0"
+"openai@^4.19.1":
+  "integrity" "sha512-9TddzuZBn2xxhghGGTHLZ4EeNBGTLs3xVzh266NiSJvtUsCsZQ5yVV6H5NhnhyAkKK8uUiZOUUlUAk3HdV+4xg=="
+  "resolved" "https://registry.npmjs.org/openai/-/openai-4.19.1.tgz"
+  "version" "4.19.1"
   dependencies:
     "@types/node" "^18.11.18"
     "@types/node-fetch" "^2.6.4"

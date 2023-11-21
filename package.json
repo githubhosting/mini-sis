@@ -5,7 +5,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.5.4",
     "axios": "^1.4.0",
-    "openai": "^4.19.0",
+    "openai": "^4.19.1",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
