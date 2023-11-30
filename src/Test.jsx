@@ -9,7 +9,7 @@ import LoadingText from "./components/Loading1";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
 import OpenAI from "openai";
-const apikey = "esecret_hanjm9lbkdr62f7csy3fem5fvys";
+const apikey = process.env.REACT_APP_API_URL;
 const anyscale = new OpenAI({
   baseURL: "https://api.endpoints.anyscale.com/v1",
   apiKey: apikey,
@@ -112,7 +112,7 @@ const MyComponent = (props) => {
     const stringdata = JSON.stringify(filteredData);
     const preprompt = "Carefully look into the student data provided:";
     const postprompt =
-      "Your meticulous data analysis will be instrumental in extracting and presenting the key points.";
+      "Your funny data analysis and will be helping in presenting the analysis based. You task is to roast the student.";
     const fullPrompt = `${preprompt} ${stringdata} ${postprompt}`;
 
     setResponseLoading(true);
@@ -122,7 +122,7 @@ const MyComponent = (props) => {
       const completion = await anyscale.chat.completions.create({
         model: "meta-llama/Llama-2-7b-chat-hf",
         messages: [
-          { role: "system", content: "You are a helpful assistant." },
+          { role: "system", content: "You are a funny roasting data analyst." },
           { role: "user", content: fullPrompt },
         ],
         temperature: 0.7,

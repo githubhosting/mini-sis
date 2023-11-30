@@ -2,12 +2,77 @@
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
 import NewComp from "./NewComp";
+import LoadingText from "./Loading1";
+import OpenAI from "openai";
+const apikey = process.env.REACT_APP_API_URL;
+const anyscale = new OpenAI({
+  baseURL: "https://api.endpoints.anyscale.com/v1",
+  apiKey: apikey,
+  dangerouslyAllowBrowser: true,
+});
 
 const profile = {
   avatar:
     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
   backgroundImage:
     "https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+};
+const MyComponent = (props) => {
+  const mydata = props.data;
+  const [aiResponse, setAiResponse] = useState(null);
+  const [responseLoading, setResponseLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const chatComplete = async () => {
+    const filteredData = {
+      name: mydata.name,
+      usn: mydata.usn,
+      marks: mydata.marks,
+    };
+    const stringdata = JSON.stringify(filteredData);
+    const preprompt = "Carefully look into the student data provided:";
+    const postprompt =
+      "Your funny data analysis and will be helping in presenting the analysis based. You task is to roast the student.";
+    const fullPrompt = `${preprompt} ${stringdata} ${postprompt}`;
+
+    setResponseLoading(true);
+    setError(null);
+
+    try {
+      const completion = await anyscale.chat.completions.create({
+        model: "meta-llama/Llama-2-7b-chat-hf",
+        messages: [
+          { role: "system", content: "You are a funny roasting data analyst." },
+          { role: "user", content: fullPrompt },
+        ],
+        temperature: 0.7,
+      });
+
+      setAiResponse(completion.choices[0].message.content);
+    } catch (err) {
+      console.error("Error during API call:", err);
+      setError(err.message || "Failed to fetch AI response.");
+    } finally {
+      setResponseLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <button
+        className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+        onClick={chatComplete}
+        disabled={responseLoading}
+      >
+        Analyze Data
+      </button>
+      {responseLoading && <LoadingText />}
+      <div className="mt-6">
+        {error && <div className="px-4 break-words">{error}</div>}
+        {aiResponse && <div className="px-4 break-words">{aiResponse}</div>}
+      </div>
+    </div>
+  );
 };
 
 function PageData({ user, onLogout }) {
@@ -100,6 +165,7 @@ function PageData({ user, onLogout }) {
           <Loading />
         ) : realdata ? (
           <div>
+            <MyComponent data={data} />
             <NewComp data={data} profile={profile} />
             <div className="p-4 flex justify-center w-full">
               <button
