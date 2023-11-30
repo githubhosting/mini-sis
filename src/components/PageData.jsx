@@ -40,7 +40,7 @@ const MyComponent = (props) => {
 
     try {
       const completion = await anyscale.chat.completions.create({
-        model: "meta-llama/Llama-2-7b-chat-hf",
+        model: "meta-llama/Llama-2-13b-chat-hf",
         messages: [
           { role: "system", content: "You are a funny roasting data analyst." },
           { role: "user", content: fullPrompt },
