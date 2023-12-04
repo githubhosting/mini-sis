@@ -26,6 +26,9 @@ function Login({ onLogin }) {
             <p className="font-medium text-blue-600 italic">
               make sure to enter the correct credintials
             </p>
+            <p className="mt-2 text-center text-sm text-gray-600 italic">
+              *this is a one time login
+            </p>
           </div>
         </div>
 

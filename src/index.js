@@ -9,8 +9,6 @@ import Appall from "./Appall";
 import "./index.css";
 import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Layout from "./Layout";
-import Dashboard from "./components/Dashboard";
-import Preferences from "./components/Preferences";
 import Test from "./Test";
 
 export default function Apps() {

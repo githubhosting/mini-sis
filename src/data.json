@@ -3,872 +3,163 @@
     "refunds": [],
     "fees": [],
     "name": "SHRAVAN M R",
-    "courseSmall": "B.E-AI",
-    "sem": "SEM 04",
+    "courseSmall": "B.E-CI",
+    "sem": "SEM 05",
     "sec": "SEC A",
-    "earned": "36",
-    "to_earn": "139",
+    "earned": "57",
+    "to_earn": "118",
     "attendance": [
         {
-            "code": "CI41",
-            "name": "Numerical Techniques and Probability Models",
-            "teacher": "Dr. M.V. Govindaraju",
-            "present": "21",
-            "absent": "6",
-            "remaining": "21",
-            "percentage": "99%",
+            "code": "AL58",
+            "name": "Research Methodology and Intellectual Property Rights",
+            "teacher": "Dr. Samrat K",
+            "present": "13",
+            "absent": "3",
+            "remaining": "19",
+            "percentage": "81%",
             "present_dates": [
                 {
-                    "date": "28-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "27-06-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "26-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "22-06-2023",
+                    "date": "15-11-2023",
                     "time": "13:45-14:40",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "21-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "20-06-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "19-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "06-06-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "01-06-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "31-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "31-05-2023",
-                    "time": "08:00-09:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "30-05-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "29-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-05-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "22-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "18-05-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "17-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "16-05-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "11-05-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "10-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ],
-            "absent_dates": [
-                {
-                    "date": "15-06-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "08-06-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "07-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "09-05-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "09-05-2023",
-                    "time": "08:00-09:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "08-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                }
-            ]
-        },
-        {
-            "code": "HS492",
-            "name": "Constitution of India & Professional Ethics",
-            "teacher": "Kanya Kumari S",
-            "present": "5",
-            "absent": "1",
-            "remaining": "5",
-            "percentage": "100%",
-            "present_dates": [
-                {
-                    "date": "26-06-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "05-06-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "29-05-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "22-05-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-05-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                }
-            ],
-            "absent_dates": [
-                {
-                    "date": "19-06-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                }
-            ]
-        },
-        {},
-        {
-            "code": "CI42",
-            "name": "Data Communication and Networking",
-            "teacher": "Dr. Siddesh G M",
-            "present": "19",
-            "absent": "4",
-            "remaining": "16",
-            "percentage": "100%",
-            "present_dates": [
-                {
-                    "date": "30-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "30-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "27-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "09-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "09-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "06-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "02-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "02-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "30-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "26-05-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "19-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "19-05-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "16-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "12-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "12-05-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "09-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ],
-            "absent_dates": [
-                {
-                    "date": "20-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "16-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "16-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "26-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ]
-        },
-        {
-            "code": "CI43",
-            "name": "Design and Analysis of Algorithms",
-            "teacher": "Sini Anna  Alex",
-            "present": "14",
-            "absent": "5",
-            "remaining": "15",
-            "percentage": "100%",
-            "present_dates": [
-                {
-                    "date": "28-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "26-06-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "22-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "21-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "19-06-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "07-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "05-06-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "01-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "31-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "29-05-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "25-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-05-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "08-05-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                }
-            ],
-            "absent_dates": [
-                {
-                    "date": "08-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "24-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "22-05-2023",
-                    "time": "14:40-16:30",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "18-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "11-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                }
-            ]
-        },
-        {
-            "code": "CI44",
-            "name": "Introduction to Artificial Intelligence",
-            "teacher": "Dr.  Thippeswamy M N",
-            "present": "17",
-            "absent": "4",
-            "remaining": "16",
-            "percentage": "100%",
-            "present_dates": [
-                {
-                    "date": "28-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "28-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "27-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "21-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "20-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "07-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "07-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "06-06-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "31-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "31-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "30-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-05-2023",
-                    "time": "13:45-14:40",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "18-05-2023",
+                    "date": "15-11-2023",
                     "time": "14:40-15:35",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "16-05-2023",
-                    "time": "11:05-12:00",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "16-05-2023",
+                    "date": "08-11-2023",
                     "time": "13:45-14:40",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "09-05-2023",
+                    "date": "08-11-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "07-11-2023",
                     "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "25-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "25-10-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "17-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "11-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "11-10-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "10-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "04-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "04-10-2023",
+                    "time": "14:40-15:35",
                     "index": "2",
                     "status": "None"
                 }
             ],
             "absent_dates": [
                 {
-                    "date": "21-06-2023",
-                    "time": "09:00-09:55",
+                    "date": "31-10-2023",
+                    "time": "11:05-12:00",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "20-06-2023",
+                    "date": "18-10-2023",
                     "time": "13:45-14:40",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "24-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "24-05-2023",
-                    "time": "09:55-10:50",
+                    "date": "18-10-2023",
+                    "time": "14:40-15:35",
                     "index": "2",
                     "status": "None"
                 }
             ]
         },
         {
-            "code": "CI45",
-            "name": "Operating System",
-            "teacher": "Akshatha  G C G C",
-            "present": "17",
-            "absent": "2",
-            "remaining": "16",
-            "percentage": "99%",
-            "present_dates": [
-                {
-                    "date": "26-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "23-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "22-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "19-06-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "16-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "09-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "02-06-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "01-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "29-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "26-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "25-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "19-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "18-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "12-05-2023",
-                    "time": "09:55-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "11-05-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "08-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ],
-            "absent_dates": [
-                {
-                    "date": "08-06-2023",
-                    "time": "09:00-09:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-05-2023",
-                    "time": "12:00-12:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ]
-        },
-        {
-            "code": "CIL46",
-            "name": "Embedded Systems Laboratory",
-            "teacher": "Dr. Mohana Kumar S",
+            "code": "HS59",
+            "name": "Environmental Studies",
+            "teacher": "LAVANYA ADDAGADA",
             "present": "6",
-            "absent": "1",
-            "remaining": "5",
-            "percentage": "99%",
-            "present_dates": [
-                {
-                    "date": "22-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "01-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "25-05-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "18-05-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "11-05-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ],
-            "absent_dates": [
-                {
-                    "date": "08-06-2023",
-                    "time": "11:05-12:55",
-                    "index": "2",
-                    "status": "None"
-                }
-            ]
-        },
-        {
-            "code": "CIL47",
-            "name": "Algorithms Laboratory",
-            "teacher": "Sini Anna  Alex",
-            "present": "5",
             "absent": "0",
-            "remaining": "5",
+            "remaining": "6",
             "percentage": "100%",
             "present_dates": [
                 {
-                    "date": "28-06-2023",
-                    "time": "13:45-15:35",
+                    "date": "09-11-2023",
+                    "time": "15:35-16:30",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "21-06-2023",
-                    "time": "13:45-15:35",
+                    "date": "02-11-2023",
+                    "time": "15:35-16:30",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "07-06-2023",
-                    "time": "13:45-15:35",
+                    "date": "26-10-2023",
+                    "time": "15:35-16:30",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "31-05-2023",
-                    "time": "13:45-15:35",
+                    "date": "19-10-2023",
+                    "time": "15:35-16:30",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "24-05-2023",
-                    "time": "13:45-15:35",
+                    "date": "12-10-2023",
+                    "time": "15:35-16:30",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "05-10-2023",
+                    "time": "15:35-16:30",
                     "index": "2",
                     "status": "None"
                 }
@@ -876,46 +167,149 @@
             "absent_dates": []
         },
         {
-            "code": "CIL48",
-            "name": "Web Technologies Laboratory",
-            "teacher": "PALLAVI T P",
-            "present": "6",
-            "absent": "2",
-            "remaining": "4",
-            "percentage": "99%",
+            "code": "CI51",
+            "name": "Big Data Analytics",
+            "teacher": "Akshatha  G C G C",
+            "present": "12",
+            "absent": "3",
+            "remaining": "18",
+            "percentage": "80%",
             "present_dates": [
                 {
-                    "date": "03-07-2023",
+                    "date": "16-11-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-11-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "07-11-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "02-11-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "30-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "19-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "17-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "16-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "12-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "10-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "05-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                }
+            ],
+            "absent_dates": [
+                {
+                    "date": "06-11-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "31-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "26-10-2023",
+                    "time": "13:45-14:40",
+                    "index": "2",
+                    "status": "None"
+                }
+            ]
+        },
+        {
+            "code": "CI52",
+            "name": "Introduction to Machine Learning",
+            "teacher": "Dr.  Thippeswamy M N",
+            "present": "6",
+            "absent": "10",
+            "remaining": "19",
+            "percentage": "37%",
+            "present_dates": [
+                {
+                    "date": "07-11-2023",
                     "time": "09:00-10:50",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "26-06-2023",
+                    "date": "31-10-2023",
                     "time": "09:00-10:50",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "19-06-2023",
+                    "date": "18-10-2023",
+                    "time": "09:00-09:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "18-10-2023",
+                    "time": "09:55-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "17-10-2023",
                     "time": "09:00-10:50",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "29-05-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "15-05-2023",
-                    "time": "09:00-10:50",
-                    "index": "2",
-                    "status": "None"
-                },
-                {
-                    "date": "08-05-2023",
+                    "date": "10-10-2023",
                     "time": "09:00-10:50",
                     "index": "2",
                     "status": "None"
@@ -923,13 +317,328 @@
             ],
             "absent_dates": [
                 {
-                    "date": "05-06-2023",
+                    "date": "15-11-2023",
+                    "time": "09:00-09:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "15-11-2023",
+                    "time": "09:55-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "08-11-2023",
+                    "time": "09:00-09:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "08-11-2023",
+                    "time": "09:55-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "25-10-2023",
+                    "time": "09:00-09:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "25-10-2023",
+                    "time": "09:55-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "11-10-2023",
+                    "time": "09:00-09:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "11-10-2023",
+                    "time": "09:55-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "04-10-2023",
+                    "time": "09:00-09:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "04-10-2023",
+                    "time": "09:55-10:50",
+                    "index": "2",
+                    "status": "None"
+                }
+            ]
+        },
+        {
+            "code": "CI53",
+            "name": "Automata Theory and Compiler Design",
+            "teacher": "Sini Anna  Alex",
+            "present": "9",
+            "absent": "5",
+            "remaining": "17",
+            "percentage": "64%",
+            "present_dates": [
+                {
+                    "date": "16-11-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-11-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "06-11-2023",
                     "time": "09:00-10:50",
                     "index": "2",
                     "status": "None"
                 },
                 {
-                    "date": "22-05-2023",
+                    "date": "02-11-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "30-10-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "30-10-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "19-10-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "16-10-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "16-10-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                }
+            ],
+            "absent_dates": [
+                {
+                    "date": "06-11-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "26-10-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "12-10-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-10-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-10-2023",
+                    "time": "12:00-12:55",
+                    "index": "2",
+                    "status": "None"
+                }
+            ]
+        },
+        {
+            "code": "CI54",
+            "name": "Software Engineering",
+            "teacher": "PALLAVI T P",
+            "present": "10",
+            "absent": "7",
+            "remaining": "17",
+            "percentage": "58%",
+            "present_dates": [
+                {
+                    "date": "16-11-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "15-11-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-11-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "02-11-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "30-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "19-10-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "18-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "05-10-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "04-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                }
+            ],
+            "absent_dates": [
+                {
+                    "date": "08-11-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "06-11-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "26-10-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "25-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "16-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "12-10-2023",
+                    "time": "14:40-15:35",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "11-10-2023",
+                    "time": "11:05-12:00",
+                    "index": "2",
+                    "status": "None"
+                }
+            ]
+        },
+        {
+            "code": "CIL56",
+            "name": "Application Development using Java Laboratory",
+            "teacher": "Akshatha  G C G C",
+            "present": "6",
+            "absent": "1",
+            "remaining": "5",
+            "percentage": "85%",
+            "present_dates": [
+                {
+                    "date": "16-11-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "09-11-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "02-11-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "19-10-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "12-10-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "05-10-2023",
+                    "time": "09:00-10:50",
+                    "index": "2",
+                    "status": "None"
+                }
+            ],
+            "absent_dates": [
+                {
+                    "date": "26-10-2023",
                     "time": "09:00-10:50",
                     "index": "2",
                     "status": "None"
@@ -937,141 +646,80 @@
             ]
         },
         {
-            "code": "HSAEC411",
-            "name": "Soft skills training for Employability",
-            "teacher": "",
+            "code": "CIL57",
+            "name": "Data Analytics Laboratory",
+            "teacher": "Tojo Mathew",
+            "present": "5",
+            "absent": "1",
+            "remaining": "8",
+            "percentage": "83%",
+            "present_dates": [
+                {
+                    "date": "17-11-2023",
+                    "time": "11:05-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "03-11-2023",
+                    "time": "11:05-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "27-10-2023",
+                    "time": "11:05-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "13-10-2023",
+                    "time": "11:05-12:55",
+                    "index": "2",
+                    "status": "None"
+                },
+                {
+                    "date": "06-10-2023",
+                    "time": "11:05-12:55",
+                    "index": "2",
+                    "status": "None"
+                }
+            ],
+            "absent_dates": [
+                {
+                    "date": "20-10-2023",
+                    "time": "11:05-12:55",
+                    "index": "2",
+                    "status": "None"
+                }
+            ]
+        },
+        {
+            "code": "CIE552",
+            "name": "Advanced Computer Networks",
+            "teacher": "Anil",
             "present": "0",
             "absent": "0",
-            "remaining": "13",
-            "percentage": "-100%",
+            "remaining": "37",
+            "percentage": "0%",
+            "present_dates": [],
+            "absent_dates": []
+        },
+        {
+            "code": "HSAEC513",
+            "name": "Public Speaking for Engineers",
+            "teacher": "Diwakar P",
+            "present": "0",
+            "absent": "0",
+            "remaining": "14",
+            "percentage": "0%",
             "present_dates": [],
             "absent_dates": []
         }
     ],
     "marks": [
         {
-            "name": "Numerical Techniques and Probability Models (CI41)",
-            "class_average": {
-                "t1": "9",
-                "t2": "0",
-                "t3": "0",
-                "t4": "0",
-                "a1": "0",
-                "a2": "0",
-                "a3": "0"
-            },
-            "t1": "25/30",
-            "t2": "-",
-            "t3": "-",
-            "t4": "-",
-            "a1": "-",
-            "a2": "-",
-            "a3": "-",
-            "final cie": "25/30"
-        },
-        {
-            "name": "Constitution of India & Professional Ethics (HS492)",
-            "class_average": {
-                "t1": "6",
-                "t2": "0",
-                "t3": "0",
-                "t4": "0",
-                "a1": "9",
-                "a2": "0",
-                "a3": "0"
-            },
-            "t1": "30/30",
-            "t2": "-",
-            "t3": "-",
-            "t4": "-",
-            "a1": "10/10",
-            "a2": "-",
-            "a3": "-",
-            "final cie": "40/40"
-        },
-        {},
-        {
-            "name": "Data Communication and Networking (CI42)",
-            "class_average": {
-                "t1": "23",
-                "t2": "0",
-                "t3": "0",
-                "t4": "0",
-                "a1": "0",
-                "a2": "0",
-                "a3": "0"
-            },
-            "t1": "23/30",
-            "t2": "-",
-            "t3": "-",
-            "t4": "-",
-            "a1": "-",
-            "a2": "-",
-            "a3": "-",
-            "final cie": "23/30"
-        },
-        {
-            "name": "Design and Analysis of Algorithms (CI43)",
-            "class_average": {
-                "t1": "22",
-                "t2": "0",
-                "t3": "0",
-                "t4": "0",
-                "a1": "0",
-                "a2": "0",
-                "a3": "0"
-            },
-            "t1": "22/30",
-            "t2": "-",
-            "t3": "-",
-            "t4": "-",
-            "a1": "-",
-            "a2": "-",
-            "a3": "-",
-            "final cie": "22/30"
-        },
-        {
-            "name": "Introduction to Artificial Intelligence (CI44)",
-            "class_average": {
-                "t1": "26",
-                "t2": "0",
-                "t3": "0",
-                "t4": "0",
-                "a1": "0",
-                "a2": "0",
-                "a3": "0"
-            },
-            "t1": "28/30",
-            "t2": "-",
-            "t3": "-",
-            "t4": "-",
-            "a1": "-",
-            "a2": "-",
-            "a3": "-",
-            "final cie": "28/30"
-        },
-        {
-            "name": "Operating System (CI45)",
-            "class_average": {
-                "t1": "21",
-                "t2": "0",
-                "t3": "0",
-                "t4": "0",
-                "a1": "0",
-                "a2": "0",
-                "a3": "0"
-            },
-            "t1": "22/30",
-            "t2": "-",
-            "t3": "-",
-            "t4": "-",
-            "a1": "-",
-            "a2": "-",
-            "a3": "-",
-            "final cie": "22/30"
-        },
-        {
-            "name": "Embedded Systems Laboratory (CIL46)",
+            "name": "Research Methodology and Intellectual Property Rights (AL58)",
             "class_average": {
                 "t1": "0",
                 "t2": "0",
@@ -1088,10 +736,10 @@
             "a1": "-",
             "a2": "-",
             "a3": "-",
-            "final cie": "86%"
+            "final cie": "81%"
         },
         {
-            "name": "Algorithms Laboratory (CIL47)",
+            "name": "Environmental Studies (HS59)",
             "class_average": {
                 "t1": "0",
                 "t2": "0",
@@ -1111,7 +759,7 @@
             "final cie": "100%"
         },
         {
-            "name": "Web Technologies Laboratory (CIL48)",
+            "name": "Big Data Analytics (CI51)",
             "class_average": {
                 "t1": "0",
                 "t2": "0",
@@ -1128,12 +776,132 @@
             "a1": "-",
             "a2": "-",
             "a3": "-",
-            "final cie": "75%"
+            "final cie": "80%"
         },
         {
-            "name": "Soft skills training for Employability (HSAEC411)",
+            "name": "Introduction to Machine Learning (CI52)",
             "class_average": {
-                "t1": "26",
+                "t1": "24",
+                "t2": "0",
+                "t3": "0",
+                "t4": "0",
+                "a1": "0",
+                "a2": "0",
+                "a3": "0"
+            },
+            "t1": "30/30",
+            "t2": "-",
+            "t3": "-",
+            "t4": "-",
+            "a1": "-",
+            "a2": "-",
+            "a3": "-",
+            "final cie": "30/30"
+        },
+        {
+            "name": "Automata Theory and Compiler Design (CI53)",
+            "class_average": {
+                "t1": "0",
+                "t2": "0",
+                "t3": "0",
+                "t4": "0",
+                "a1": "0",
+                "a2": "0",
+                "a3": "0"
+            },
+            "t1": "-",
+            "t2": "-",
+            "t3": "-",
+            "t4": "-",
+            "a1": "-",
+            "a2": "-",
+            "a3": "-",
+            "final cie": "64%"
+        },
+        {
+            "name": "Software Engineering (CI54)",
+            "class_average": {
+                "t1": "0",
+                "t2": "0",
+                "t3": "0",
+                "t4": "0",
+                "a1": "0",
+                "a2": "0",
+                "a3": "0"
+            },
+            "t1": "-",
+            "t2": "-",
+            "t3": "-",
+            "t4": "-",
+            "a1": "-",
+            "a2": "-",
+            "a3": "-",
+            "final cie": "59%"
+        },
+        {
+            "name": "Application Development using Java Laboratory (CIL56)",
+            "class_average": {
+                "t1": "0",
+                "t2": "0",
+                "t3": "0",
+                "t4": "0",
+                "a1": "0",
+                "a2": "0",
+                "a3": "0"
+            },
+            "t1": "-",
+            "t2": "-",
+            "t3": "-",
+            "t4": "-",
+            "a1": "-",
+            "a2": "-",
+            "a3": "-",
+            "final cie": "86%"
+        },
+        {
+            "name": "Data Analytics Laboratory (CIL57)",
+            "class_average": {
+                "t1": "0",
+                "t2": "0",
+                "t3": "0",
+                "t4": "0",
+                "a1": "0",
+                "a2": "0",
+                "a3": "0"
+            },
+            "t1": "-",
+            "t2": "-",
+            "t3": "-",
+            "t4": "-",
+            "a1": "-",
+            "a2": "-",
+            "a3": "-",
+            "final cie": "83%"
+        },
+        {
+            "name": "Advanced Computer Networks (CIE552)",
+            "class_average": {
+                "t1": "0",
+                "t2": "0",
+                "t3": "0",
+                "t4": "0",
+                "a1": "0",
+                "a2": "0",
+                "a3": "0"
+            },
+            "t1": "-",
+            "t2": "-",
+            "t3": "-",
+            "t4": "-",
+            "a1": "-",
+            "a2": "-",
+            "a3": "-",
+            "final cie": "0%"
+        },
+        {
+            "name": "Public  Speaking for Engineers (HSAEC513)",
+            "class_average": {
+                "t1": "0",
                 "t2": "0",
                 "t3": "0",
                 "t4": "0",
@@ -1173,14 +941,6 @@
             "CGPA": "",
             "term": "Feb / Mar 2022",
             "results": [
-                {
-                    "COURSE CODE": "PY15",
-                    "SUBJECT NAME": "ENGINEERING PHYSICS",
-                    "Credits Reg.": "3",
-                    "Credits Earned": "3",
-                    "GPA": "8",
-                    "Grade": "A"
-                },
                 {
                     "COURSE CODE": "EE13",
                     "SUBJECT NAME": "BASIC ELECTRICAL ENGINEERING",
@@ -1222,6 +982,14 @@
                     "Grade": "A"
                 },
                 {
+                    "COURSE CODE": "PY15",
+                    "SUBJECT NAME": "ENGINEERING PHYSICS",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "8",
+                    "Grade": "A"
+                },
+                {
                     "COURSE CODE": "MEL17",
                     "SUBJECT NAME": "COMPUTER AIDED ENGINEERING DRAWING",
                     "Credits Reg.": "3",
@@ -1246,14 +1014,6 @@
             "CGPA": " 8.77",
             "term": "July 2022",
             "results": [
-                {
-                    "COURSE CODE": "EC23",
-                    "SUBJECT NAME": "BASIC ELECTRONICS",
-                    "Credits Reg.": "3",
-                    "Credits Earned": "3",
-                    "GPA": "8",
-                    "Grade": "A"
-                },
                 {
                     "COURSE CODE": "AEC26",
                     "SUBJECT NAME": "A SCIENTIFIC APPROACH TO HEALTH",
@@ -1295,6 +1055,14 @@
                     "Grade": "A+"
                 },
                 {
+                    "COURSE CODE": "EC23",
+                    "SUBJECT NAME": "BASIC ELECTRONICS",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "8",
+                    "Grade": "A"
+                },
+                {
                     "COURSE CODE": "MEL29",
                     "SUBJECT NAME": "WORKSHOP PRACTICE",
                     "Credits Reg.": "1",
@@ -1312,11 +1080,100 @@
                 },
                 {
                     "COURSE CODE": "CSL28",
-                    "SUBJECT NAME": "C PROGRAMMING LABORATORY",
+                    "SUBJECT NAME": "FUNDAMENTALS OF COMPUTING & C PROGRAMMING LABORATORY",
                     "Credits Reg.": "1",
                     "Credits Earned": "1",
                     "GPA": "10",
                     "Grade": "O"
+                }
+            ]
+        },
+        {
+            "Credits Registered ": "  21",
+            "Credits Earned ": "  21",
+            "SGPA": "  8.28",
+            "CGPA": " 8.59",
+            "term": "Jan 2023",
+            "results": [
+                {
+                    "COURSE CODE": "CI34",
+                    "SUBJECT NAME": "COMPUTER ORGANIZATION AND ARCHITECTURE",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "8",
+                    "Grade": "A"
+                },
+                {
+                    "COURSE CODE": "UHV38",
+                    "SUBJECT NAME": "UNIVERSAL HUMAN VALUE",
+                    "Credits Reg.": "2",
+                    "Credits Earned": "2",
+                    "GPA": "9",
+                    "Grade": "A+"
+                },
+                {
+                    "COURSE CODE": "CI31",
+                    "SUBJECT NAME": "LINEAR ALGEBRA, LAPLACE TRANSFORMS AND OPTIMIZATION",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "7",
+                    "Grade": "B+"
+                },
+                {
+                    "COURSE CODE": "HS391M",
+                    "SUBJECT NAME": "KANNADA MANASU",
+                    "Credits Reg.": "1",
+                    "Credits Earned": "1",
+                    "GPA": "9",
+                    "Grade": "A+"
+                },
+                {
+                    "COURSE CODE": "CI35",
+                    "SUBJECT NAME": "DISCRETE MATHEMATICAL STRUCTURES",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "9",
+                    "Grade": "A+"
+                },
+                {
+                    "COURSE CODE": "CI32",
+                    "SUBJECT NAME": "DATE BASE MANAGEMENT SYSTEMS (INTEGRATED)",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "8",
+                    "Grade": "A"
+                },
+                {
+                    "COURSE CODE": "CI33",
+                    "SUBJECT NAME": "DATA STRUCTURES",
+                    "Credits Reg.": "3",
+                    "Credits Earned": "3",
+                    "GPA": "8",
+                    "Grade": "A"
+                },
+                {
+                    "COURSE CODE": "HSAEC310",
+                    "SUBJECT NAME": "PSYCHOLOGY",
+                    "Credits Reg.": "1",
+                    "Credits Earned": "1",
+                    "GPA": "8",
+                    "Grade": "A"
+                },
+                {
+                    "COURSE CODE": "CIL36",
+                    "SUBJECT NAME": "DATA STRUCTURES LABORATORY",
+                    "Credits Reg.": "1",
+                    "Credits Earned": "1",
+                    "GPA": "10",
+                    "Grade": "O"
+                },
+                {
+                    "COURSE CODE": "CIL37",
+                    "SUBJECT NAME": "OBJECT ORIENTED PROGRAMMING LABORATORY",
+                    "Credits Reg.": "1",
+                    "Credits Earned": "1",
+                    "GPA": "9",
+                    "Grade": "A+"
                 }
             ]
         }

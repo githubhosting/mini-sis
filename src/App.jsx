@@ -9,10 +9,42 @@ import LoginPage from "./components/Login";
 import { CookiesProvider, useCookies } from "react-cookie";
 import Footer from "./components/Footer";
 import FooterLogin from "./components/Footerlogin";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+
+const config = {
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: "mini-sis",
+  storageBucket: "mini-sis.appspot.com",
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
+};
+
+firebase.initializeApp(config);
+
+const uiConfig = {
+  signInFlow: "popup",
+  // signInSuccessUrl: "/",
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  ],
+};
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  useEffect(() => {
+    const unregisterAuthObserver = firebase
+      .auth()
+      .onAuthStateChanged((user) => {
+        setIsSignedIn(!!user);
+      });
+    return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
+  }, []);
 
   useEffect(() => {
     const userCookie = cookies.user;
@@ -35,6 +67,28 @@ function App() {
     removeCookie("dob");
     setIsLoggedIn(false);
   };
+  if (!isSignedIn) {
+    return (
+      <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 bg-blue-50 items-center h-screen">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md bg-white rounded-lg shadow-xl p-6">
+          <h2 className="mt-6 text-center text-xl font-bold tracking-tight text-gray-900">
+            Welcome to Mini-SIS
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600">
+            Please sign-in to continue
+          </p>
+          <StyledFirebaseAuth
+            className=""
+            uiConfig={uiConfig}
+            firebaseAuth={firebase.auth()}
+          />
+        </div>
+        <div className="mt-10">
+          <FooterLogin />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <CookiesProvider>
@@ -42,10 +96,15 @@ function App() {
         {isLoggedIn ? (
           <>
             <PageData user={cookies.user} onLogout={handleLogout} />
+            <p>
+              Welcome {firebase.auth().currentUser.displayName}! You are now
+              signed-in!
+            </p>
+            <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
             <Footer />
           </>
         ) : (
-          <div className="min-h-screen bg-blue-50">
+          <div className="bg-blue-50">
             <LoginPage onLogin={handleLogin} />
             <FooterLogin />
           </div>

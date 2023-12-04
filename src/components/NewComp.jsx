@@ -142,7 +142,7 @@ function NewComp(props) {
                     {props.data.attendance[index].percentage}
                   </h1>
                 </div>
-                <h1 className="text-center text-sm text-indigo-50">
+                <h1 className="text-center text-sm text-indigo-50 mt-1">
                   {latestDate ? `Updated on ${latestDate}` : ""}:{" "}
                   {daysAgo ? daysAgo : ""} days ago
                 </h1>
