@@ -35,7 +35,6 @@ const profile = {
 
 const MyComponent = (props) => {
   const mydata = props.data;
-  console.log(mydata.usn);
   const firestore = firebase.firestore();
   const authname = firebase.auth().currentUser.displayName;
   const [aiResponse, setAiResponse] = useState(null);
@@ -97,9 +96,9 @@ const MyComponent = (props) => {
   //     console.error("Error saving response to Firestore:", err);
   //   }
   // };
+
   const saveResponseToFirestore = async (newResponse, totalTokens) => {
     const userDocRef = firestore.collection("users").doc(authname);
-
     try {
       const doc = await userDocRef.get();
       if (doc.exists) {
@@ -154,7 +153,6 @@ const MyComponent = (props) => {
       alert("You have reached the maximum number of generations.");
       return;
     }
-
     const filteredData = {
       name: mydata.name,
       marks: mydata.marks,
@@ -270,25 +268,25 @@ function PageData({ user, onLogout }) {
     const fetchData = async () => {
       try {
         setLoading(true);
-        // const response = await fetch(urll);
-        // const json = await response.json();
-        // if (json.length !== 0) {
-        //   setData(json);
-        //   if (json.name !== "") {
-        //     setRealData(json.name);
-        //   }
-        // } else {
-        //   setError("Invalid Credentials");
-        // }
-        setTimeout(() => {
-          const json = mockdata;
-          if (json && json.name !== "") {
-            setData(json);
+        const response = await fetch(urll);
+        const json = await response.json();
+        if (json.length !== 0) {
+          setData(json);
+          if (json.name !== "") {
             setRealData(json.name);
-          } else {
-            throw new Error(mockdata);
           }
-        }, 1000);
+        } else {
+          setError("Invalid Credentials");
+        }
+        // setTimeout(() => {
+        //   const json = mockdata;
+        //   if (json && json.name !== "") {
+        //     setData(json);
+        //     setRealData(json.name);
+        //   } else {
+        //     throw new Error(mockdata);
+        //   }
+        // }, 1000);
       } catch (error) {
         console.error("Error fetching data:", error);
         setError("Invalid Credentials");

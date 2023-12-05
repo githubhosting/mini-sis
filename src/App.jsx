@@ -70,11 +70,14 @@ function App() {
   if (!isSignedIn) {
     return (
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 bg-blue-50 items-center h-screen">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md bg-white rounded-lg shadow-xl p-6">
-          <h2 className="mt-6 text-center text-xl font-bold tracking-tight text-gray-900">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md bg-white rounded-lg shadow-xl px-3 py-6">
+          <h2 className="mt-6 text-center text-2xl font-bold tracking-tight from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">
             Welcome to Mini-SIS
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <h3 className="mt-2 text-center text-xl tracking-tight text-gray-600">
+            The mini and awesome portal
+          </h3>
+          <p className="mt-2 text-center text-sm text-gray-600 italic">
             Please sign-in to continue
           </p>
           <StyledFirebaseAuth
