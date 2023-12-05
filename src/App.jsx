@@ -21,7 +21,6 @@ const config = {
   messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
   appId: process.env.REACT_APP_APPID,
 };
-
 firebase.initializeApp(config);
 
 const uiConfig = {
@@ -66,6 +65,7 @@ function App() {
     removeCookie("user");
     removeCookie("dob");
     setIsLoggedIn(false);
+    firebase.auth().signOut();
   };
   if (!isSignedIn) {
     return (
@@ -96,11 +96,9 @@ function App() {
         {isLoggedIn ? (
           <>
             <PageData user={cookies.user} onLogout={handleLogout} />
-            <p>
-              Welcome {firebase.auth().currentUser.displayName}! You are now
-              signed-in!
-            </p>
-            <button onClick={() => firebase.auth().signOut()}>Sign-out</button>
+            {/* <p className="text-white">
+              {firebase.auth().currentUser.displayName}
+            </p> */}
             <Footer />
           </>
         ) : (

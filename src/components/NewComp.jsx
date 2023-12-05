@@ -41,17 +41,20 @@ function NewComp(props) {
         </div> */}
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mt-6 flex items-center space-x-5">
-            {/* <div className="flex">
+            <div className="flex">
               <img
                 className="h-24 w-24 rounded-full ring-2 ring-indigo-50 shadow-num_d sm:h-32 sm:w-32"
-                src={props.profile.avatar}
+                src={props.profileurl}
                 alt="Avatar"
               />
-            </div> */}
+            </div>
             <div className="flex-1">
-              <h1 className="lg:text-2xl font-bold text-white text-xl text-center">
+              <h1 className="lg:text-3xl font-bold text-white text-xl text-center">
                 Welcome {props.data.name} !
               </h1>
+              <p className="text-xs mt-2 text-gray-300 text-center italic">
+                Signed in as: {props.signname}
+              </p>
             </div>
           </div>
         </div>
@@ -128,7 +131,11 @@ function NewComp(props) {
                 </table>
                 <div className="flex justify-center mt-2 text-indigo-50">
                   <h1 className="">Final CIE: </h1>
-                  <h1 className="ml-2 font-semibold">{item["final cie"]}</h1>
+                  {item["final cie"].includes("%") ? (
+                    <h1 className="ml-2 font-semibold">-</h1>
+                  ) : (
+                    <h1 className="ml-2 font-semibold">{item["final cie"]}</h1>
+                  )}
                 </div>
                 <div className="flex justify-center mt-2 text-indigo-50">
                   <h1 className="">Attendance: </h1>

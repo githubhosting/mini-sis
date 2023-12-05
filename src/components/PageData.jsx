@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Loading from "./Loading";
@@ -6,12 +7,24 @@ import { TypeAnimation } from "react-type-animation";
 import mockdata from "../data.json";
 import LoadingText from "./Loading1";
 import OpenAI from "openai";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+
 const apikey = process.env.REACT_APP_API_URL;
 const anyscale = new OpenAI({
   baseURL: "https://api.endpoints.anyscale.com/v1",
   apiKey: apikey,
   dangerouslyAllowBrowser: true,
 });
+const config = {
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: "mini-sis",
+  storageBucket: "mini-sis.appspot.com",
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
+};
+firebase.initializeApp(config);
 
 const profile = {
   avatar:
@@ -19,35 +32,22 @@ const profile = {
   backgroundImage:
     "https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
 };
-const mockaiResponse = {
-  id: "meta-llama/Llama-2-7b-chat-hf-HUN-w_JD_1GnuJsccgAj85U_2sLxLmpuArwAGsK4svE",
-  object: "text_completion",
-  created: 1701591294,
-  model: "meta-llama/Llama-2-7b-chat-hf",
-  choices: [
-    {
-      message: {
-        role: "assistant",
-        content:
-          "  Oh, boy! *adjusts monocle* You've got quite the collection of grades there, my dear Shravan! *coughs* I mean, *ahem* Shravan M. R. *winks*\n\nLet's start with the obvious: your lack of skills in Public Speaking for Engineers. *chuckles* It's like you're afraid of public speaking or something! *giggles* I mean, come on, 0%?! That's like the academic version of a \"Most Improved\" award! *winks*\n\nBut wait, there's more! *clears throat* Your grades in Software Engineering are simply *eyeroll* impressive. I mean, who doesn't love a good 59%? *chuckles* It's like you're the academic equivalent of a B-movie actor: always close, but never quite there. *winks*\n\nAnd don't even get me started on your grades in Big Data Analytics! *giggles* Oh, my! 80%?! *adjusts monocle* That's like the academic version of a \"Participation Trophy\". *winks* I'm sure your parents are just thrilled to see you coasting through your courses like a... *ahem* well-rested snail. *chuckles*\n\nBut hey, at least you have some redeeming qualities! *coughs* Like your perfect score in Introduction to Machine Learning! *giggles* It's like you're the academic version of a superhero: saving the day one algorithm at a time! *winks* And your grades in Environmental Studies? *adjusts monocle* Well, that's just... *ahem* enlightening! *chuckles* I mean, who doesn't love a good 100%? *winks*\n\nIn conclusion, Shravan M. R., you are the academic equivalent of a... *ahem* well-rounded individual! *chuckles* I mean, who needs straight A's when you can have a little bit of everything? *winks* Keep up the good work, and maybe one day you'll be the academic version of a... *ahem* genius! *giggles*",
-      },
-      index: 0,
-      finish_reason: "stop",
-    },
-  ],
-  usage: {
-    prompt_tokens: 1090,
-    completion_tokens: 528,
-    total_tokens: 1618,
-  },
-};
 
 const MyComponent = (props) => {
   const mydata = props.data;
+  console.log(mydata.usn);
+  const firestore = firebase.firestore();
+  const authname = firebase.auth().currentUser.displayName;
   const [aiResponse, setAiResponse] = useState(null);
   const [responseLoading, setResponseLoading] = useState(false);
   const [error, setError] = useState(null);
   const [animationKey, setAnimationKey] = useState(0);
+  const [generateCount, setGenerateCount] = useState(0);
+
+  useEffect(() => {
+    fetchGenerateCount();
+  }, []);
+
   const model_list = [
     "meta-llama/Llama-2-7b-chat-hf",
     "meta-llama/Llama-2-13b-chat-hf",
@@ -55,20 +55,121 @@ const MyComponent = (props) => {
     "HuggingFaceH4/zephyr-7b-beta",
     "mistralai/Mistral-7B-Instruct-v0.1",
   ];
+
+  const fetchGenerateCount = async () => {
+    try {
+      const response = await firestore.collection("users").doc(authname).get();
+      if (response.exists) {
+        setGenerateCount(response.data().generateCount || 0);
+      } else {
+        setGenerateCount(0);
+      }
+    } catch (err) {
+      console.error("Error fetching generate count:", err);
+    }
+  };
+
+  const updateGenerateCount = async () => {
+    try {
+      await firestore
+        .collection("users")
+        .doc(authname)
+        .set(
+          {
+            generateCount: firebase.firestore.FieldValue.increment(1),
+          },
+          { merge: true }
+        );
+    } catch (err) {
+      console.error("Error updating generate count:", err);
+    }
+  };
+
+  // const saveResponseToFirestore = async (response) => {
+  //   try {
+  //     await firestore.collection("responses").add({
+  //       user: authname,
+  //       response: response,
+  //       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+  //     });
+  //     console.log("Response saved to Firestore");
+  //   } catch (err) {
+  //     console.error("Error saving response to Firestore:", err);
+  //   }
+  // };
+  const saveResponseToFirestore = async (newResponse, totalTokens) => {
+    const userDocRef = firestore.collection("users").doc(authname);
+
+    try {
+      const doc = await userDocRef.get();
+      if (doc.exists) {
+        await userDocRef.update({
+          responses: firebase.firestore.FieldValue.arrayUnion({
+            usn: mydata.usn,
+            name: mydata.name,
+            response: newResponse,
+            tokens: totalTokens,
+          }),
+          generateCount: firebase.firestore.FieldValue.increment(1),
+        });
+      } else {
+        await userDocRef.set({
+          responses: [
+            {
+              usn: mydata.usn,
+              name: mydata.name,
+              response: newResponse,
+              tokens: totalTokens,
+            },
+          ],
+          generateCount: 1,
+        });
+      }
+      setGenerateCount((prevCount) => prevCount + 1);
+    } catch (err) {
+      console.error("Error updating or creating user document:", err);
+    }
+  };
+
+  const formatGrades = (jsonData) => {
+    let formattedString = "";
+    jsonData.marks.forEach((subject) => {
+      if (subject.t1 !== "-") {
+        formattedString += `Subject: ${subject.name}. `;
+        if (subject["final cie"] !== "-") {
+          formattedString += `My score is ${subject["final cie"]}. `;
+        }
+        if (subject.class_average.t1 !== "0") {
+          formattedString += `And Class average is ${subject.class_average.t1}. `;
+        }
+        formattedString += "\n";
+      }
+    });
+
+    return formattedString;
+  };
+
   const chatComplete = async () => {
+    if (generateCount >= 10) {
+      alert("You have reached the maximum number of generations.");
+      return;
+    }
+
     const filteredData = {
       name: mydata.name,
       marks: mydata.marks,
     };
-    console.log(filteredData);
-    const stringdata = JSON.stringify(filteredData);
-    const preprompt = "Hey, Carefully look into my academic data: ";
+    const formate_data = formatGrades(filteredData);
+    console.log(formate_data);
+    const preprompt = `Hey my name is ${mydata.name}, Carefully look into my academic data: `;
     const postprompt =
-      "Make sure to roast me in the most funniest way possible. Remember to keep it short and Nice";
-    const fullPrompt = `${preprompt} ${stringdata} ${postprompt}`;
-    console.log(fullPrompt);
+      "Make sure to roast me in the most funniest way possible. Remember to keep it short and not more than 100 words.";
+    const fullPrompt = `${preprompt} ${formate_data} ${postprompt}`;
+    console.log("full prompt", fullPrompt);
+
     setResponseLoading(true);
     setError(null);
+
     try {
       const completion = await anyscale.chat.completions.create({
         model: model_list[1],
@@ -76,14 +177,22 @@ const MyComponent = (props) => {
           {
             role: "system",
             content:
-              "Your funny yet humorous data analysis and will be helping in presenting the analysis based on my performance. You task is to roast the me.",
+              "Your funny yet humorous data analysis and will be helping in presenting the analysis based on my performance. Your task is to roast me.",
           },
           { role: "user", content: fullPrompt },
         ],
-        temperature: 0.4,
+        temperature: 0.6,
       });
-      setAiResponse(completion.choices[0].message.content);
-      setAnimationKey((prevKey) => prevKey + 1);
+
+      if (completion.choices[0].message.content) {
+        const totalTokens = completion.usage.total_tokens;
+        await saveResponseToFirestore(
+          completion.choices[0].message.content,
+          totalTokens
+        );
+        setAiResponse(completion.choices[0].message.content);
+        setAnimationKey((prevKey) => prevKey + 1);
+      }
       console.log(completion);
     } catch (err) {
       console.error("Error during API call:", err);
@@ -95,12 +204,18 @@ const MyComponent = (props) => {
 
   return (
     <div className="flex flex-col justify-center items-center p-2 border-t">
-      <h1 className="text-center font-bold text-2xl lg:text-4xl">
+      <h1 className="text-center font-bold text-2xl lg:text-3xl mt-3 text-gray-300">
+        Introducing New feature in Mini-SIS
+      </h1>
+      <h1 className="text-center font-bold text-3xl lg:text-4xl mt-3 from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">
         Get Grilled by AI
       </h1>
-      <h2 className="text-center text-xl lg:text-2xl">
-        A Lighthearted Roast on Your Academic Journey
+      <h2 className="text-center text-md lg:text-2xl mt-2">
+        A Lighthearted Roast on Your CIE Marks
       </h2>
+      <p className="text-xs italic text-gray-300">
+        You can generate {10 - generateCount} more times.
+      </p>
       <button
         className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded mt-5"
         onClick={chatComplete}
@@ -134,6 +249,9 @@ function PageData({ user, onLogout }) {
   const [check, setCheck] = useState(false);
   const [realdata, setRealData] = useState(null);
   console.log(user.username, user.dob);
+  const profileurl = firebase.auth().currentUser.photoURL;
+  console.log(profileurl);
+  const signname = firebase.auth().currentUser.displayName;
 
   useEffect(() => {
     if (
@@ -181,8 +299,6 @@ function PageData({ user, onLogout }) {
     fetchData();
   }, [urll]);
 
-  console.log(realdata);
-
   function formatDate(inputDate) {
     const dateParts = inputDate.split("-");
     const year = dateParts[0];
@@ -227,7 +343,12 @@ function PageData({ user, onLogout }) {
           <Loading />
         ) : realdata ? (
           <div>
-            <NewComp data={data} profile={profile} />
+            <NewComp
+              data={data}
+              profile={profile}
+              profileurl={profileurl}
+              signname={signname}
+            />
             <MyComponent data={data} />
             <div className="p-4 flex justify-center w-full">
               <button
