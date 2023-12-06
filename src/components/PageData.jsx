@@ -68,35 +68,6 @@ const MyComponent = (props) => {
     }
   };
 
-  const updateGenerateCount = async () => {
-    try {
-      await firestore
-        .collection("users")
-        .doc(authname)
-        .set(
-          {
-            generateCount: firebase.firestore.FieldValue.increment(1),
-          },
-          { merge: true }
-        );
-    } catch (err) {
-      console.error("Error updating generate count:", err);
-    }
-  };
-
-  // const saveResponseToFirestore = async (response) => {
-  //   try {
-  //     await firestore.collection("responses").add({
-  //       user: authname,
-  //       response: response,
-  //       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-  //     });
-  //     console.log("Response saved to Firestore");
-  //   } catch (err) {
-  //     console.error("Error saving response to Firestore:", err);
-  //   }
-  // };
-
   const saveResponseToFirestore = async (newResponse, totalTokens) => {
     const userDocRef = firestore.collection("users").doc(authname);
     try {
@@ -108,6 +79,7 @@ const MyComponent = (props) => {
             name: mydata.name,
             response: newResponse,
             tokens: totalTokens,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           }),
           generateCount: firebase.firestore.FieldValue.increment(1),
         });
@@ -241,6 +213,8 @@ const MyComponent = (props) => {
 };
 
 function PageData({ user, onLogout }) {
+  const firestore = firebase.firestore();
+  const authname = firebase.auth().currentUser.displayName;
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -248,7 +222,6 @@ function PageData({ user, onLogout }) {
   const [realdata, setRealData] = useState(null);
   console.log(user.username, user.dob);
   const profileurl = firebase.auth().currentUser.photoURL;
-  console.log(profileurl);
   const signname = firebase.auth().currentUser.displayName;
 
   useEffect(() => {
@@ -263,7 +236,6 @@ function PageData({ user, onLogout }) {
   }, [user]);
 
   const urll = `https://upylba53h2.execute-api.us-east-1.amazonaws.com/sis?usn=${user.username}&dob=${user.dob}`;
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -274,6 +246,7 @@ function PageData({ user, onLogout }) {
           setData(json);
           if (json.name !== "") {
             setRealData(json.name);
+            await updateLoginCount();
           }
         } else {
           setError("Invalid Credentials");
@@ -322,6 +295,17 @@ function PageData({ user, onLogout }) {
 
     return `${day} ${monthName}, ${year}`;
   }
+
+  const updateLoginCount = async () => {
+    const userDocRef = firestore.collection("users").doc(authname);
+    try {
+      await userDocRef.update({
+        loginCount: firebase.firestore.FieldValue.increment(1),
+      });
+    } catch (err) {
+      console.error("Error updating login count:", err);
+    }
+  };
 
   if (check === true) {
     return (
