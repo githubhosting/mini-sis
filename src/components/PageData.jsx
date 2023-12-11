@@ -133,7 +133,7 @@ const MyComponent = (props) => {
     console.log(formate_data);
     const preprompt = `Hey my name is ${mydata.name}, Carefully look into my academic data: `;
     const postprompt =
-      "Make sure to roast me in the most funniest way possible. Remember to keep it short and not more than 150 words.";
+      "Make sure to roast me. Remember to keep it little short and I go blind if it is more than 150 words so keep it short.";
     const fullPrompt = `${preprompt} ${formate_data} ${postprompt}`;
     console.log("full prompt", fullPrompt);
 
@@ -181,7 +181,7 @@ const MyComponent = (props) => {
         Get Grilled by AI
       </h1>
       <h2 className="text-center text-md lg:text-2xl mt-2">
-        A Lighthearted Roast on Your CIE Marks
+        A Lighthearted Roast on Your CIE Marks 🫢
       </h2>
       <p className="text-xs italic text-gray-300">
         You can generate {10 - generateCount} more times.
