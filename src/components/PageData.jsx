@@ -215,6 +215,7 @@ const MyComponent = (props) => {
 function PageData({ user, onLogout }) {
   const firestore = firebase.firestore();
   const authname = firebase.auth().currentUser.displayName;
+  const authUser = firebase.auth().currentUser;
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -234,6 +235,29 @@ function PageData({ user, onLogout }) {
       setCheck(true);
     }
   }, [user]);
+
+  const updateLoginCount = async () => {
+    const userDocRef = firestore.collection("users").doc(authname);
+
+    try {
+      const doc = await userDocRef.get();
+
+      if (!doc.exists) {
+        // If the user document doesn't exist, create it with a loginCount of 1
+        await userDocRef.set({ loginCount: 1 });
+        console.log("New user document created with initial login count");
+      } else {
+        // If the user document exists, increment the loginCount
+        await userDocRef.update({
+          loginCount: firebase.firestore.FieldValue.increment(1),
+        });
+        console.log("Existing user login count incremented");
+      }
+    } catch (err) {
+      console.error("Error in updating or creating user document:", err);
+      // Additional error handling if needed
+    }
+  };
 
   const urll = `https://upylba53h2.execute-api.us-east-1.amazonaws.com/sis?usn=${user.username}&dob=${user.dob}`;
   useEffect(() => {
@@ -295,17 +319,6 @@ function PageData({ user, onLogout }) {
 
     return `${day} ${monthName}, ${year}`;
   }
-
-  const updateLoginCount = async () => {
-    const userDocRef = firestore.collection("users").doc(authname);
-    try {
-      await userDocRef.update({
-        loginCount: firebase.firestore.FieldValue.increment(1),
-      });
-    } catch (err) {
-      console.error("Error updating login count:", err);
-    }
-  };
 
   if (check === true) {
     return (
