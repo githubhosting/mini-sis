@@ -12,6 +12,7 @@ import FooterLogin from "./components/Footerlogin";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import { Analytics } from "@vercel/analytics/react";
 
 const config = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -36,13 +37,15 @@ function App() {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const unregisterAuthObserver = firebase
       .auth()
       .onAuthStateChanged((user) => {
         setIsSignedIn(!!user);
+        setLoading(false);
       });
-    return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
+    return () => unregisterAuthObserver();
   }, []);
 
   useEffect(() => {
@@ -67,6 +70,9 @@ function App() {
     setIsLoggedIn(false);
     firebase.auth().signOut();
   };
+  if (loading) {
+    return <Loading />; // Display loading indicator
+  }
   if (!isSignedIn) {
     return (
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 bg-blue-50 items-center h-screen">
@@ -92,7 +98,6 @@ function App() {
       </div>
     );
   }
-
   return (
     <CookiesProvider>
       <main className="bg-gray-900">
@@ -110,6 +115,7 @@ function App() {
             <FooterLogin />
           </div>
         )}
+        <Analytics />
       </main>
     </CookiesProvider>
   );

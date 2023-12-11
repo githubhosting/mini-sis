@@ -79,7 +79,6 @@ const MyComponent = (props) => {
             name: mydata.name,
             response: newResponse,
             tokens: totalTokens,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           }),
           generateCount: firebase.firestore.FieldValue.increment(1),
         });
@@ -97,6 +96,7 @@ const MyComponent = (props) => {
         });
       }
       setGenerateCount((prevCount) => prevCount + 1);
+      console.log("Response saved to Firestore.");
     } catch (err) {
       console.error("Error updating or creating user document:", err);
     }
@@ -111,7 +111,7 @@ const MyComponent = (props) => {
           formattedString += `My score is ${subject["final cie"]}. `;
         }
         if (subject.class_average.t1 !== "0") {
-          formattedString += `And Class average is ${subject.class_average.t1}. `;
+          formattedString += `Class average is ${subject.class_average.t1}. `;
         }
         formattedString += "\n";
       }
@@ -133,7 +133,7 @@ const MyComponent = (props) => {
     console.log(formate_data);
     const preprompt = `Hey my name is ${mydata.name}, Carefully look into my academic data: `;
     const postprompt =
-      "Make sure to roast me in the most funniest way possible. Remember to keep it short and not more than 100 words.";
+      "Make sure to roast me in the most funniest way possible. Remember to keep it short and not more than 150 words.";
     const fullPrompt = `${preprompt} ${formate_data} ${postprompt}`;
     console.log("full prompt", fullPrompt);
 
@@ -147,7 +147,7 @@ const MyComponent = (props) => {
           {
             role: "system",
             content:
-              "Your funny yet humorous data analysis and will be helping in presenting the analysis based on my performance. Your task is to roast me.",
+              "You're a witty AI assistant, tasked with humorously roasting me based on my academic scores. Analyze my performance in each subject and deliver sharp, funny, and slightly exaggerated roasts, highlighting my strengths and weaknesses in a playful way.",
           },
           { role: "user", content: fullPrompt },
         ],
@@ -312,7 +312,7 @@ function PageData({ user, onLogout }) {
       <div className="w-full bg-gray-900 text-indigo-50">
         <div className="">
           <h1 className="text-center font-bold pt-8 text-2xl lg:text-4xl">
-            Students Information System
+            Mini Students Information System
           </h1>
           <div className="p-4">
             <h1 className="text-center font-bold">
